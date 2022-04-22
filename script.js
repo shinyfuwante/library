@@ -16,12 +16,9 @@ function createBookCard(book) {
     card.classList.add(`book${myLibrary.length}`);
     //every card will have 4 children, 1 for each element
     //the card will display everything in a grid, 1 for each row;
-    
-    card.appendChild(createCardHelper("bookAuthor", book.author));
-    card.appendChild(createCardHelper("bookTitle", book.title));
-    card.appendChild(createCardHelper("bookNumPages", book.numPages));
-    card.appendChild(createCardHelper("readStatus", book.read));
-
+    for (const [key, value] of Object.entries(book)) {
+        card.appendChild(createCardHelper(`book${key}`, value));
+    }
     return card;
 }
 
