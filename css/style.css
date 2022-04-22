@@ -1,0 +1,29 @@
+html, :root {
+    --cotton-candy: #FFC4EB;
+    --pale-purple: #FFE4FA;
+    --misty-rose: #F1DEDC;
+    --dutch-white: #E1DABD;
+    --dark-sea-green: #ABC798;
+    background: var(--pale-purple);
+}
+
+body {
+    
+}
+overall-container {
+    display:grid;
+    grid-template-rows: minmax(30%, 1fr) minmax(70%, 7fr);
+}
+
+overall-container header {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin: -1em;
+    background: var(--dark-sea-green);
+}
+
+overall-container library {
+}
