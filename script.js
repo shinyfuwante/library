@@ -16,26 +16,20 @@ function createBookCard(book) {
     card.classList.add(`book${myLibrary.length}`);
     //every card will have 4 children, 1 for each element
     //the card will display everything in a grid, 1 for each row;
-    let bookAuthor = document.createElement("div");
-    bookAuthor.classList.add("bookAuthor");
-    bookAuthor.innerText = book.author;
-    card.appendChild(bookAuthor);
+    
+    card.appendChild(createCardHelper("bookAuthor", book.author));
+    card.appendChild(createCardHelper("bookTitle", book.title));
+    card.appendChild(createCardHelper("bookNumPages", book.numPages));
+    card.appendChild(createCardHelper("readStatus", book.read));
 
-    let bookTitle = document.createElement("div");
-    bookTitle.classList.add("bookTitle");
-    bookTitle.innerText = book.title;
-    card.appendChild(bookTitle);
-
-    let bookNumPages = document.createElement("div");
-    bookNumPages.classList.add("bookNumPages");
-    bookNumPages.innerText = book.numPages;
-    card.appendChild(bookNumPages);
-
-    let readStatus = document.createElement("div");
-    readStatus.classList.add("readStatus");
-    readStatus.innerText = book.read;
-    card.appendChild(readStatus);
     return card;
+}
+
+function createCardHelper(string, bookField) {
+    let child = document.createElement("div");
+    child.classList.add(string);
+    child.innerText = bookField;
+    return child;
 }
 
 
