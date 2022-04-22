@@ -17,8 +17,17 @@ function createBookCard(book) {
     //every card will have 4 children, 1 for each element
     //the card will display everything in a grid, 1 for each row;
     for (const [key, value] of Object.entries(book)) {
+        if (key == "read") continue;
         card.appendChild(createCardHelper(`book-${key}`, value));
     }
+    let readStatus = document.createElement("div");
+    if (book.read == true) {
+        readStatus.classList.add("read");
+        readStatus.innerText = "Has Read";
+    } else {
+        readStatus.innerText = "Not Read";
+    }
+    card.appendChild(readStatus);
     return card;
 }
 
