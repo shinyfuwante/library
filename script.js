@@ -17,7 +17,7 @@ function createBookCard(book) {
     //every card will have 4 children, 1 for each element
     //the card will display everything in a grid, 1 for each row;
     for (const [key, value] of Object.entries(book)) {
-        card.appendChild(createCardHelper(`book${key}`, value));
+        card.appendChild(createCardHelper(`book-${key}`, value));
     }
     return card;
 }
@@ -46,14 +46,14 @@ function toggleRead(book) {
 
 
 // -------------------------------------------------------------------------------------
-function addBooks(books) {
-    books.forEach(book => addBook(book));
-}
+
 let book1 = new Book(1, 2, 3, true);
 let book2 = new Book(4, 5, 6, false);
 let book3 = new Book(7, 8, 9, false);
 let sampleBooks = [book1, book2, book3];
-addBook(sampleBooks[0]);
+for (let i = 0; i < sampleBooks.length; i++) {
+    addBook(sampleBooks[i]);
+}
 //--------------------------------------------------------------------------------------
 
 displayLibrary();
