@@ -53,6 +53,19 @@ function toggleRead(book) {
     book.read = !book.read;
 }
 
+// -------------------------------
+function addNewBook(e){
+    const form = document.querySelector("form.add-book");
+    console.log(form);
+    form.classList.toggle("visible");
+}
+// -------------------------------
+
+function listener() {
+    const addBook = document.querySelector('button#add-book');
+    addBook.addEventListener('click', addNewBook);
+}
+
 
 // -------------------------------------------------------------------------------------
 
@@ -66,3 +79,4 @@ for (let i = 0; i < sampleBooks.length; i++) {
 //--------------------------------------------------------------------------------------
 
 displayLibrary();
+listener();
