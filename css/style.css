@@ -63,7 +63,8 @@ overall-container library {
 }
 
 overall-container library book {
-    border: 2px solid red;
+    border: 1px solid var(--dark-sea-green);
+    border-radius: 1em;
     display: grid;
     grid-auto-rows: minmax(max-content, 1fr);
     place-items: center;
@@ -98,7 +99,7 @@ library book button#read-status.read {
 }
 
 library book button#read-status {
-    background-color: var(--cotton-candy);
+    background-color: rgba(255, 173, 240, 0.6);
 }
 
 library book button#remove {
