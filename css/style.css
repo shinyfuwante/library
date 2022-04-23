@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
 html, :root {
     --cotton-candy: #FFC4EB;
     --pale-purple: #FFE4FA;
@@ -5,15 +7,17 @@ html, :root {
     --dutch-white: #E1DABD;
     --dark-sea-green: #ABC798;
     background: var(--pale-purple);
+    font-family: 'Comfortaa', sans-serif;
 }
 
-body {
-    
-}
+/*----------------------------------------------*/
+
 overall-container {
     display:grid;
     grid-template-rows: minmax(20%, 1fr) minmax(60%, 7fr);
 }
+
+/*----------------------------------------------*/
 
 overall-container header {
     height: 20vh;
@@ -24,6 +28,8 @@ overall-container header {
     margin: -1em;
     background: var(--dark-sea-green);
 }
+
+/*----------------------------------------------*/
 
 overall-container library {
     display: grid;
@@ -48,6 +54,8 @@ library book button#read-status {
     background-color: var(--cotton-candy);
 }
 
+/*----------------------------------------------*/
+
 form.add-book {
     display: none;
 }
@@ -70,4 +78,23 @@ button#close-button {
     position: absolute;
     right:0; 
     top:0;
+}
+
+/*----------------------------------------------*/
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--dark-sea-green);
+    margin: -1vw;
+    color: white;
+    font-weight: 700;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
 }
