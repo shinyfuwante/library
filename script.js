@@ -69,7 +69,16 @@ function newBook(e) {
 
     let bookToAdd = new Book(bookAuthor.value, bookName.value, bookPages.value, readStatus.checked);
     addBook(bookToAdd);
+
+    bookAuthor.value = "";
+    bookName.value = "";
+    bookPages.value = "";
+    readStatus.checked = false;
+
     displayLibrary();
+
+    const form = document.querySelector("form.add-book");
+    form.classList.toggle("visible");
     
 }
 // -------------------------------
@@ -80,7 +89,6 @@ function listener() {
     btnOpenForm.addEventListener('click', openForm);
     btnAddBook.addEventListener('click', newBook);
 }
-
 
 // -------------------------------------------------------------------------------------
 
