@@ -6,8 +6,10 @@ html, :root {
     --misty-rose: #F1DEDC;
     --dutch-white: #E1DABD;
     --dark-sea-green: #ABC798;
-    background: var(--pale-purple);
+    --bg-color: rgba(255, 228, 250, 0.2);
+    background: var(--bg-color);
     font-family: 'Comfortaa', sans-serif;
+    font-size: 15pt;
 }
 
 /*----------------------------------------------*/
@@ -33,6 +35,21 @@ overall-container header {
 /*----------------------------------------------*/
 button#form-button {
     border: 0px;
+    align-self: center;
+    justify-self: center;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55em;
+    color: var(--dark-sea-green);
+    background: none;
+    font-size: 20pt;
+}
+
+button#form-button:hover {
+    background-color: rgba(171, 199, 152, 0.3);
+    color: rgb(105, 146, 79)
 }
 /*----------------------------------------------*/
 overall-container library {
@@ -93,12 +110,14 @@ footer {
     gap: 10px;
     background-color: var(--dark-sea-green);
     margin: -1em;
+    margin-bottom: 0;
     color: white;
     font-weight: 700;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 4em;
+    font-size: 12pt;
 }
 
 footer img {
