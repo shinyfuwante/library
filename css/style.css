@@ -14,23 +14,27 @@ html, :root {
 
 overall-container {
     display:grid;
-    grid-template-rows: minmax(20%, 1fr) minmax(60%, 7fr);
+    grid-template-rows: minmax(3em, 0.5fr) minmax(3em, 0.2fr) minmax(300px, 15fr);
+    row-gap: 1em;
 }
 
 /*----------------------------------------------*/
 
 overall-container header {
-    height: 20vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 1rem;
     margin: -1em;
+    margin-bottom: 0;
     background: var(--dark-sea-green);
 }
 
 /*----------------------------------------------*/
-
+button#form-button {
+    border: 0px;
+}
+/*----------------------------------------------*/
 overall-container library {
     display: grid;
     gap: 1em;
@@ -88,9 +92,13 @@ footer {
     justify-content: center;
     gap: 10px;
     background-color: var(--dark-sea-green);
-    margin: -1vw;
+    margin: -1em;
     color: white;
     font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4em;
 }
 
 footer img {
