@@ -40,8 +40,12 @@ overall-container library book {
     background-color: whitesmoke;
 }
 
-library book .read {
+library book button#read-status.read {
     background-color: var(--dark-sea-green);
+}
+
+library book button#read-status {
+    background-color: var(--cotton-candy);
 }
 
 form.add-book {

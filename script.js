@@ -17,14 +17,16 @@ function createBookCard(book) {
     card.dataset.index = numBooks++;
     for (const [key, value] of Object.entries(book)) {
         if (key == "read") continue;
-        card.appendChild(createCardHelper(`book-${key}`, value));
+        card.appendChild(createCardHelper(`${key}`, value));
     }
-    let readStatus = document.createElement("div");
+    let readStatus = document.createElement("button");
+    readStatus.id = "read-status";
+
     if (book.read == true) {
         readStatus.classList.add("read");
-        readStatus.innerText = "Has Read";
+        readStatus.innerText = "Have Read";
     } else {
-        readStatus.innerText = "Not Read";
+        readStatus.innerText = "Not read yet";
     }
     card.appendChild(readStatus);
 
@@ -38,8 +40,12 @@ function createBookCard(book) {
 
 function createCardHelper(string, bookField) {
     let child = document.createElement("div");
+    string = string.charAt(0).toUpperCase() + string.slice(1);
     child.classList.add(string);
-    child.innerText = bookField;
+
+    if (string === "NumPages") string = "# of pages";
+
+    child.innerText = `${string}: ${bookField}`;
     return child;
 }
 
@@ -55,8 +61,16 @@ function displayLibrary() {
     myLibrary.forEach(book => library.appendChild(createBookCard(book)));
 }
 
-function toggleRead(book) {
-    book.read = !book.read;
+function toggleRead(e) {
+    let element = e.target;
+    element.classList.toggle("read");
+
+    if (element.classList.contains("read")) element.innerText = "Have Read";
+    else element.innerText = "Not read yet";
+
+
+    const book = e.target.parentNode;
+    myLibrary[book.dataset.index].read = !myLibrary[book.dataset.index].read;
 }
 
 // -------------------------------
@@ -108,6 +122,7 @@ function removeBook(e) {
 // -------------------------------
 
 function listener() {
+    //form access
     const btnOpenForm = document.querySelector('button#form-button');
     const btnCloseForm = document.querySelector('button#close-button');
     btnOpenForm.addEventListener('click', toggleForm);
@@ -115,10 +130,16 @@ function listener() {
         e.preventDefault();
         toggleForm(e);
     });
+
+    //adding/removing books
     const btnAddBook = document.querySelector('button#add-book');
     btnAddBook.addEventListener('click', newBook);
     const btnsRemove = document.querySelectorAll('button#remove');
     btnsRemove.forEach(button => button.addEventListener('click', removeBook));
+
+    //toggle read status
+    const btnsRead = document.querySelectorAll('button#read-status');
+    btnsRead.forEach(button => button.addEventListener('click', toggleRead));
 }
 
 // -------------------------------------------------------------------------------------
