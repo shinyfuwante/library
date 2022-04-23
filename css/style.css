@@ -156,13 +156,15 @@ form.add-book .checkbox {
     gap: 0.3em;
 }
 
-form.add-book button#add-book {
-    width: 55%;
-    height: 50%;
+form.add-book button {
     border: 3px solid var(--dark-sea-green);
     background-color:var(white);
     color: var(--dark-sea-green);
     font-weight: 600;
+}
+form.add-book button#add-book {
+    width: 55%;
+    height: 50%;
 }
 
 form.add-book input#have_read {
@@ -174,6 +176,8 @@ button#close-button {
     position: absolute;
     right:0; 
     top:0;
+    width: 2em;
+    height: 2em;
 }
 
 /*----------------------------------------------*/
