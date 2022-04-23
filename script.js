@@ -42,7 +42,7 @@ function createCardHelper(string, bookField) {
     let child = document.createElement("div");
     child.classList.add(string);
 
-    if (string === "numPages")   {
+    if (string === "numPages") {
         child.innerText = `${bookField} page(s)`;
     } else if (string === "title") {
         child.innerText = `'${bookField}'`;
@@ -147,9 +147,11 @@ function listener() {
 
 // -------------------------------------------------------------------------------------
 
-let book1 = new Book(1, 2, 3, true);
-let book2 = new Book(4, 5, 6, false);
-let book3 = new Book(7, 8, 9, false);
+//Initial books in library
+
+let book1 = new Book('Robert Cecil Martin', 'Clean Code', 464, false);
+let book2 = new Book('Dr. Seuss', 'Green Eggs and Ham', 65, true);
+let book3 = new Book('Gayle Laakman McDowell', "Cracking the Coding Interview", 'too many', false);
 let sampleBooks = [book1, book2, book3];
 for (let i = 0; i < sampleBooks.length; i++) {
     addBook(sampleBooks[i]);
