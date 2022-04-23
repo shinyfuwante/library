@@ -31,17 +31,26 @@
          </footer>
     </overall-container>
     <form class="add-book">
-        <label for="book_name">Name of Book:</label>
-        <input type="text" name="book_name" id="book_name" required>
+        <field class="text">
+            <label for="book_name">Name of Book:</label>
+            <input type="text" name="book_name" id="book_name" required>
+        </field>
 
-        <label for="book_author">Name of Author:</label>
-        <input type="text" name="book_author" id="book_author" required>
+        <field class="text">
+            <label for="book_author">Name of Author:</label>
+            <input type="text" name="book_author" id="book_author" required>
+        </field>
+    
+        <field class="text">
+            <label for="book_pages">How many pages?</label>
+            <input type="text" name="book_pages" id="book_pages" required>
+        </field>
 
-        <label for="book_pages">How many pages?</label>
-        <input type="text" name="book_pages" id="book_pages" required>
+        <field class="checkbox">
+            <label for="have_read">Have you read this before?</label>
+            <input type="checkbox" name="have_read" id="have_read">
+        </field>
 
-        <label for="have_read">Have you read this before?</label>
-        <input type="checkbox" name="have_read" id="have_read">
         <button id="add-book" submit>Add Book</button>
         <button id="close-button">X</button>
     </form>
