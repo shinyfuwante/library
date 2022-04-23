@@ -12,6 +12,7 @@ Potential improvements:
     <li>However, the code should allow read-status to propagate between copies, which this currently does not. </li>
     <li>Back-end and account? </li>
     <li> If desired, change toggle read function to use prototypes </li>
+    <li> Input sanitation, ensuring non-erroneous fields are being put into the system </li>
 </ol>
 <h1>Takeaways</h1>
 <ol> 
