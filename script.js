@@ -1,8 +1,9 @@
 let myLibrary = [];
+numBooks = 0;
 
 function Book(author, title, numPages, read) {
-    this.author = author;
     this.title = title;
+    this.author = author;
     this.numPages = numPages;
     this.read = read;
 }
@@ -13,7 +14,7 @@ function addBook(book) {
 
 function createBookCard(book) {
     let card = document.createElement("book");
-    card.classList.add(`book${myLibrary.length}`);
+    card.classList.add(`${numBooks++}`);
     for (const [key, value] of Object.entries(book)) {
         if (key == "read") continue;
         card.appendChild(createCardHelper(`book-${key}`, value));
@@ -88,7 +89,13 @@ function newBook(e) {
 
 function removeBook(e) {
     const library = document.querySelector("library");
-    e.target.parentNode.remove();
+    
+    nodeToRemove = e.target.parentNode;
+
+    bookIndex = Number (nodeToRemove.classList[0]);
+    myLibrary = myLibrary.filter((book, index) => index != bookIndex);
+
+    nodeToRemove.remove();
 }
 // -------------------------------
 
