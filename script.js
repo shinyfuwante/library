@@ -61,7 +61,9 @@ function displayLibrary() {
         library.removeChild(child);
         child = library.lastChild;
     }
+    numBooks = 0;
     myLibrary.forEach(book => library.appendChild(createBookCard(book)));
+    listener();
 }
 
 function toggleRead(e) {
@@ -105,10 +107,12 @@ function newBook(e) {
     let bookToAdd = new Book(bookAuthor.value, bookName.value, bookPages.value, readStatus.checked);
     addBook(bookToAdd);
 
-    displayLibrary();
-
     const form = document.querySelector("form.add-book");
     form.classList.toggle("visible");
+
+    displayLibrary();
+
+    return;
     
 }
 
@@ -159,4 +163,3 @@ for (let i = 0; i < sampleBooks.length; i++) {
 //--------------------------------------------------------------------------------------
 
 displayLibrary();
-listener();
