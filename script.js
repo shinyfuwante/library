@@ -40,12 +40,15 @@ function createBookCard(book) {
 
 function createCardHelper(string, bookField) {
     let child = document.createElement("div");
-    string = string.charAt(0).toUpperCase() + string.slice(1);
     child.classList.add(string);
 
-    if (string === "NumPages") string = "# of pages";
-
-    child.innerText = `${string}: ${bookField}`;
+    if (string === "numPages")   {
+        child.innerText = `${bookField} page(s)`;
+    } else if (string === "title") {
+        child.innerText = `'${bookField}'`;
+    } else if (string == "author") {
+        child.innerText = `by ${bookField}`;
+    }
     return child;
 }
 

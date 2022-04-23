@@ -26,10 +26,13 @@ overall-container header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 1em;
+    padding-top: 2em;
     margin: -1em;
     margin-bottom: 0;
     background: var(--dark-sea-green);
+    font-weight: 700;
+    font-size: 24pt;
 }
 
 /*----------------------------------------------*/
