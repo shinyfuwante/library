@@ -13,6 +13,7 @@ Potential improvements:
     <li>Back-end and account? </li>
     <li> If desired, change toggle read function to use prototypes </li>
     <li> Input sanitation, ensuring non-erroneous fields are being put into the system </li>
+    <li> Adding hover effects over buttons to make it more clear that they are buttons </li>
 </ol>
 <h1>Takeaways</h1>
 <ol> 
