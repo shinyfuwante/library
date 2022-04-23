@@ -26,6 +26,12 @@ function createBookCard(book) {
         readStatus.innerText = "Not Read";
     }
     card.appendChild(readStatus);
+
+    const btnRemove = document.createElement("button");
+    btnRemove.id = "remove";
+    btnRemove.innerText = "Remove";
+    card.appendChild(btnRemove);
+
     return card;
 }
 
@@ -79,13 +85,20 @@ function newBook(e) {
     form.classList.toggle("visible");
     
 }
+
+function removeBook(e) {
+    const library = document.querySelector("library");
+    e.target.parentNode.remove();
+}
 // -------------------------------
 
 function listener() {
     const btnOpenForm = document.querySelector('button#form-button');
-    const btnAddBook = document.querySelector('button#add-book');
     btnOpenForm.addEventListener('click', openForm);
+    const btnAddBook = document.querySelector('button#add-book');
     btnAddBook.addEventListener('click', newBook);
+    const btnsRemove = document.querySelectorAll('button#remove');
+    btnsRemove.forEach(button => button.addEventListener('click', removeBook));
 }
 
 // -------------------------------------------------------------------------------------
