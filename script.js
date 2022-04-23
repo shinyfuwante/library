@@ -14,7 +14,7 @@ function addBook(book) {
 
 function createBookCard(book) {
     let card = document.createElement("book");
-    card.classList.add(`${numBooks++}`);
+    card.dataset.index = numBooks++;
     for (const [key, value] of Object.entries(book)) {
         if (key == "read") continue;
         card.appendChild(createCardHelper(`book-${key}`, value));
@@ -92,7 +92,7 @@ function removeBook(e) {
     
     nodeToRemove = e.target.parentNode;
 
-    bookIndex = Number (nodeToRemove.classList[0]);
+    bookIndex = nodeToRemove.dataset.index;
     myLibrary = myLibrary.filter((book, index) => index != bookIndex);
 
     nodeToRemove.remove();
