@@ -61,3 +61,9 @@ form.add-book.visible {
     width: 40%;
     place-self: center;
 }
+
+button#close-button {
+    position: absolute;
+    right:0; 
+    top:0;
+}

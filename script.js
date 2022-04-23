@@ -60,7 +60,7 @@ function toggleRead(book) {
 }
 
 // -------------------------------
-function openForm(e){
+function toggleForm(e){
     const form = document.querySelector("form.add-book");
     form.classList.toggle("visible");
 }
@@ -101,7 +101,12 @@ function removeBook(e) {
 
 function listener() {
     const btnOpenForm = document.querySelector('button#form-button');
-    btnOpenForm.addEventListener('click', openForm);
+    const btnCloseForm = document.querySelector('button#close-button');
+    btnOpenForm.addEventListener('click', toggleForm);
+    btnCloseForm.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleForm(e);
+    });
     const btnAddBook = document.querySelector('button#add-book');
     btnAddBook.addEventListener('click', newBook);
     const btnsRemove = document.querySelectorAll('button#remove');
