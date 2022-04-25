@@ -14,7 +14,7 @@ Potential improvements:
     <li> If desired, change toggle read function to use prototypes </li>
     <li> Input sanitation, ensuring non-erroneous fields are being put into the system </li>
     <li> Adding hover effects over buttons to make it more clear that they are buttons </li>
-    <li> Known error: removing all default books and adding new books causes some default books to appear </li>
+    <li> ~~Known error: removing all default books and adding new books causes some default books to appear~~ FIXED </li>
 </ol>
 <h1>Takeaways</h1>
 <ol> 
