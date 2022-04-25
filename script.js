@@ -1,12 +1,15 @@
 let myLibrary = [];
 numBooks = 0;
 
-function Book(author, title, numPages, read) {
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.read = read;
+class Book {
+    constructor (author, title, numPages, read) {
+        this.title = title;
+        this.author = author;
+        this.numPages = numPages;
+        this.read = read;
+    }
 }
+
 
 function addBook(book) {
     myLibrary.push(book);
@@ -123,6 +126,7 @@ function removeBook(e) {
 
     bookIndex = nodeToRemove.dataset.index;
     myLibrary = myLibrary.filter((book, index) => index != bookIndex);
+    numBooks--;
 
     nodeToRemove.remove();
 }
