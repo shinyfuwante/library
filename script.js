@@ -124,8 +124,8 @@ function removeBook(e) {
     
     nodeToRemove = e.target.parentNode;
 
-    bookIndex = nodeToRemove.dataset.index;
-    myLibrary = myLibrary.filter((book, index) => index != bookIndex);
+    bookTitle = nodeToRemove.firstChild.innerText.replaceAll("'", '');
+    myLibrary = myLibrary.filter(book => book.title != bookTitle);
     numBooks--;
 
     nodeToRemove.remove();
